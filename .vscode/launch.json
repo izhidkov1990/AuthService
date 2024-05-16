@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/AuthService/bin/Debug/net8.0/AuthService.dll", // Замените YourProjectName на имя вашего проекта
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "https://localhost:7244" // Убедитесь, что порт совпадает с портом в launchSettings.json
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Запустить Chrome на localhost",
+      "url": "https://localhost:7244",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
